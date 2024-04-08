@@ -1,0 +1,36 @@
+@import "../../styles/mixins";
+
+.footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-logo {
+        margin: 40px 0;
+
+        @include tablet {
+            margin: 40px 0 30px 0;
+        }
+
+        @include mobile {
+            margin: 40px 0 20px 0;
+        }
+    }
+
+    &-copyright {
+        font-size: rem(24);
+        color: #fff;
+        margin-bottom: 20px;
+
+        @include tablet {
+            font-size: rem(16);
+        }
+
+        @include mobile {
+            font-size: rem(12);
+        }
+    }
+}

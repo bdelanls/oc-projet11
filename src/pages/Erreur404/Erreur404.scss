@@ -1,0 +1,44 @@
+@import "../../styles/mixins";
+
+.erreur {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+
+    &__title {
+        font-size: rem(288);
+        font-weight: 700;
+        color: $primary;
+
+        @include mobile {
+            font-size: rem(96);
+        }
+    }
+
+    &__message {
+        font-size: rem(36);
+        font-weight: 500;
+        color: $primary;
+        line-height: 140%;
+        text-align: center;
+
+        @include mobile {
+            font-size: rem(18);
+        }
+    }
+
+    &__link {
+        font-size: rem(18);
+
+        @include mobile {
+            font-size: rem(14);
+        }
+    }
+
+    a {
+        color: #000;
+    }
+
+}

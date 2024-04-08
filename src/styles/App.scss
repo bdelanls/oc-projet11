@@ -1,0 +1,14 @@
+@import "mixins";
+@import "reset";
+@import "fonts";
+//@import "main";
+
+#root {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}

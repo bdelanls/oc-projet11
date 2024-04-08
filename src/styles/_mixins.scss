@@ -1,0 +1,37 @@
+// mixin
+
+// mobile -> max 768px
+// tablet -> min 769px max 1023px
+// desktop -> min 1024px max 1440px
+
+@mixin mobile() {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media only screen and (min-width: 769px) and (max-width: 1023px) {
+		@content;
+	}
+}
+@mixin desktop() {
+	@media only screen and (min-width: 1024px) and (max-width: 1440px){
+		@content;
+	}
+}
+
+
+// Conversion px en em ou rem
+@function em($size, $base: 16) {
+	@return 0em + calc($size / $base);
+}
+@function rem($size, $base: 16) {
+	@return 0rem + calc($size / $base);
+}
+
+
+
+// couleurs
+$primary: #FF6060;
+$grey: #F6F6F6;
