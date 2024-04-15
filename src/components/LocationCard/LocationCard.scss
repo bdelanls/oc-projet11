@@ -1,0 +1,94 @@
+@import "../../styles/mixins";
+
+.gallery-locations {
+    background-color: $grey;
+    border-radius: 25px;
+    margin: 45px 0;
+    padding: 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 45px 4%;
+
+    @include tablet {
+        padding: 30px;
+        row-gap: 30px;
+    }
+
+    @include mobile {
+        margin: 20px 0 0 0;
+        padding: 0;
+        background-color: #fff;
+        row-gap: 20px;
+    }
+
+    
+}
+
+.location {
+    width: 100%;
+    height: 100%;
+    width: 30.5%;
+    height: 340px;
+    position: relative;
+
+    @include tablet {
+        width: 48%;
+    }
+
+    @include mobile {
+        width: 100%;
+        height: 255px;
+    }
+
+    a {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        border-radius: 10px;
+        
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5));
+            border-radius: 10px;
+            transition: all 0.1s;
+        }
+
+        &:hover::after {
+            background: linear-gradient( rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4));
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        }
+        
+    }
+
+    &-picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+    &-title {
+        position: absolute;
+        font-size: 18px;
+        font-weight: 700;
+        bottom: 20px;
+        left: 0;
+        padding: 0 20px;
+        color: #fff;
+        z-index: 1;
+        line-height: 130%;
+    }
+
+}

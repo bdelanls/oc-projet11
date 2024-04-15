@@ -1,0 +1,109 @@
+@import "../../styles/mixins";
+
+.values {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 50px 0;
+    gap: 30px;
+    padding: 0 100px;
+
+    @include tablet {
+        padding: 0;
+    }
+    @include mobile {
+        margin: 20px 0 0 0;
+        padding: 0;
+        gap: 20px;
+    }
+}
+    
+.collapse {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: $grey;
+    border-radius: 10px;
+    height: max-content;
+
+    &__btn {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: $primary;
+        cursor: pointer;
+
+        @include mobile {
+            padding: 6px 12px;
+            border-radius: 5px;
+        }
+
+
+        &::after {
+            content: "";
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23FFF' d='M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z'/></svg>");
+            width: 2em;
+            height: 2em;
+            display: block;
+            background-size: cover;
+            transition: all .3s;
+
+            @include mobile {
+                width: 1.5em;
+                height: 1.5em;
+            }
+        }
+
+        .active &::after {
+            transform: rotate(180deg);
+        }
+
+    }
+    
+
+    &__title {
+        font-size: rem(24);
+        font-weight: 700;
+        color: #fff;
+
+        @include mobile {
+            font-size: rem(13);
+        }
+    }
+
+    &__content {
+        padding: 20px;
+        font-size: rem(18);
+        line-height: 140%;
+
+        @include mobile {
+            font-size: rem(12);
+            padding: 10px;
+        }
+    }
+
+}
+
+.lodging {
+    &__collapse {
+        display: flex;
+        width: 46%;
+        border-radius: 10px;
+        height: max-content;
+
+        @include mobile {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .collapse__title {
+            font-size: rem(18);
+        }
+            
+
+    }
+  
+}

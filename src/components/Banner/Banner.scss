@@ -1,0 +1,55 @@
+@import "../../styles/mixins";
+
+.banner {
+    padding: 100px 20px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+
+    @include tablet {
+        padding: 50px 30px;
+    }
+
+    @include mobile {
+        padding: 27px 20px;
+        border-radius: 10px;
+        box-shadow: none;
+        justify-content: left;
+    }
+
+
+
+    &__home {
+        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../../assets/images/Image-hero-accueil.png");
+        background-position: center center;
+
+        h1 {
+            font-size: rem(45);
+            font-weight: 700;
+            color: #fff;
+            line-height: 120%;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+            @include mobile {
+                font-size: rem(24);
+            }
+        }
+
+    }
+
+    &__apropos {
+        background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("../../assets/images/Image-hero-apropos.png");
+        background-position: center center;
+        height: 223px;
+
+        @include mobile {
+            height: 111px;
+        }
+
+    }
+}
+    
+
+
+
