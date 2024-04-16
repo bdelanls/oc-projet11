@@ -11,14 +11,18 @@ function Fiche() {
   const logement = logements.find(logement => logement.id === id)
 
   useEffect(() => {
+    document.title = `Kasa - ${logement.title}`
+  }, [])
+
+  useEffect(() => {
     if (!logement) {
       console.log('pas de logement trouvé, navigation vers 404')
       navigate('/erreur404', { replace: true })
     }
-  }, [logement, navigate]) // Dépendances pour assurer que l'effet s'exécute au bon moment
+  }, [logement, navigate])
 
   if (!logement) {
-    return null // Cela ne sera exécuté que le premier rendu si logement est undefined
+    return null
   }
 
   // Liste des équipements

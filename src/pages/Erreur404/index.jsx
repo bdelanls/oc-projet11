@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Erreur404.scss'
 
 function Erreur404() {
+  useEffect(() => {
+    document.title = 'Kasa - 404'
+  }, [])
+
   return (
     <div>
       <main className="main">
