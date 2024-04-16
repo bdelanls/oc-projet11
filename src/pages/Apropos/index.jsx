@@ -8,11 +8,9 @@ function Apropos() {
       <Banner className="banner__apropos" />
       <section className="values">
         {aboutCollapses.map(aboutCollapse => (
-          <Collapse
-            key={aboutCollapse.id}
-            title={aboutCollapse.title}
-            content={<p>{aboutCollapse.content}</p>}
-          />
+          <Collapse key={aboutCollapse.id} title={aboutCollapse.title}>
+            <p>{aboutCollapse.content}</p>
+          </Collapse>
         ))}
       </section>
     </div>

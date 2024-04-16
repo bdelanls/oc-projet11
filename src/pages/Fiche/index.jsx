@@ -3,18 +3,13 @@ import React, { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import logements from '../../data/logements.json'
 import Collapse from '../../components/Collapse'
-//import Carrousel from '../../components/Carrousel'
+import Carrousel from '../../components/Carrousel'
 
 function Fiche() {
   const { id } = useParams()
   const navigate = useNavigate()
   const logement = logements.find(logement => logement.id === id)
 
-  // if (!logement) {
-  //   console.log('pas de logement trouvé, navigation vers 404')
-  //   navigate('/erreur404', { replace: true })
-  //   return null
-  // }
   useEffect(() => {
     if (!logement) {
       console.log('pas de logement trouvé, navigation vers 404')
@@ -40,8 +35,7 @@ function Fiche() {
   return (
     <main className="main">
       {/* CARROUSEL */}
-      <section className="carrousel"></section>
-      {/* <Carrousel images={logement.pictures} /> */}
+      <Carrousel images={logement.pictures} />
 
       <section className="wrap-loc">
         <div className="loc">
@@ -85,18 +79,12 @@ function Fiche() {
       </section>
 
       <section className="lodging">
-        <Collapse
-          key={`${logement.id}-1`}
-          title="Description"
-          collapseClass="lodging__collapse"
-          content={<p>{logement.description}</p>}
-        />
-        <Collapse
-          key={`${logement.id}-2`}
-          title="Équipement"
-          collapseClass="lodging__collapse"
-          content={<LogementEquipements equipements={logement.equipments} />}
-        />
+        <Collapse key={`${logement.id}-1`} title="Description" collapseClass="lodging__collapse">
+          <p>{logement.description}</p>
+        </Collapse>
+        <Collapse key={`${logement.id}-2`} title="Équipement" collapseClass="lodging__collapse">
+          <LogementEquipements equipements={logement.equipments} />
+        </Collapse>
       </section>
     </main>
   )
