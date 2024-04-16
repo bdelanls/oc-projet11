@@ -7,9 +7,7 @@ function Erreur404() {
       <main className="main">
         <section className="erreur">
           <h1 className="erreur__title">404</h1>
-          <p className="erreur__message">
-            {`Oups! La page que vous demandez n'existe pas.`}
-          </p>
+          <p className="erreur__message">{`Oups! La page que vous demandez n'existe pas.`}</p>
           <Link className="erreur__link" to="/">
             {`Retourner sur la page d'accueil`}
           </Link>
