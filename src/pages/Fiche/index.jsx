@@ -39,7 +39,7 @@ function Fiche() {
   return (
     <main className="main">
       {/* CARROUSEL */}
-      <Carrousel images={logement.pictures} />
+      <Carrousel images={logement.pictures} altImg={logement.title} />
 
       <section className="wrap-loc">
         <div className="loc">

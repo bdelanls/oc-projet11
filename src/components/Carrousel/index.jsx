@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Carrousel.scss'
 
-function Carrousel({ images }) {
+function Carrousel({ images, altImg }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const totalImages = images.length
 
@@ -19,7 +19,7 @@ function Carrousel({ images }) {
 
   return (
     <section className="carrousel">
-      <img className="carrousel__picture" src={images[currentIndex]} alt="" />
+      <img className="carrousel__picture" src={images[currentIndex]} alt={altImg} />
       {totalImages > 1 && (
         <>
           <p className="carrousel__counter">{`${currentIndex + 1} / ${totalImages}`}</p>
