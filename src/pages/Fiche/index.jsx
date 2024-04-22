@@ -11,15 +11,13 @@ function Fiche() {
   const logement = logements.find(logement => logement.id === id)
 
   useEffect(() => {
-    document.title = `Kasa - ${logement.title}`
-  }, [])
-
-  useEffect(() => {
     if (!logement) {
       console.log('pas de logement trouvé, navigation vers 404')
       navigate('/erreur404', { replace: true })
+    } else {
+      document.title = `Kasa - ${logement.title}`
     }
-  }, [logement, navigate])
+  }, [logement, navigate, id])
 
   if (!logement) {
     return null
