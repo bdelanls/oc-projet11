@@ -14,7 +14,7 @@ function Carrousel({ images, altImg }) {
   }
 
   if (totalImages === 0) {
-    return null // ou un placeholder si aucune image n'est disponible
+    return null
   }
 
   return (
